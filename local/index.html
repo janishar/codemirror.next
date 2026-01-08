@@ -41,9 +41,10 @@
 	<script src="dist/editor.bundle.js"></script>
 	<script>
 		const currentLanguage = "cpp";
-		const langugage = CodeEditor.languageExtensions[currentLanguage];
+		const langugage = CodeEditor.languages[currentLanguage];
 		const extensions = [
-			...CodeEditor.extensions,
+			CodeEditor.basicSetup,
+			CodeEditor.dark,
 			langugage.lint,
 			langugage.lang(),
 		];

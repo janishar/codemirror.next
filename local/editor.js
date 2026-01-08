@@ -271,7 +271,7 @@ const javascriptLinter = linter(
   })
 );
 
-const languageExtensions = {
+const languages = {
   python: { lang: python, lint: customLinter("python") },
   javascript: { lang: javascript, lint: javascriptLinter },
   cpp: { lang: cpp, lint: customLinter("cpp") },
@@ -286,13 +286,12 @@ const languageExtensions = {
   php: { lang: php, lint: customLinter("php") },
 };
 
-const extensions = [basicSetup, oneDark];
-
 const CodeEditor = {
   EditorView: EditorView,
-  extensions: extensions,
+  basicSetup: basicSetup,
+  dark: oneDark,
   commands: commands,
   snippetCompletion: snippetCompletion,
-  languageExtensions: languageExtensions,
+  languages: languages,
 };
 window.CodeEditor = CodeEditor;
