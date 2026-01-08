@@ -1,6 +1,7 @@
 {
   "description": "Development environment for the CodeMirror 6 packages",
   "scripts": {
+    "build": "npx rollup -c",
     "test": "node bin/cm.js test",
     "test-node": "node bin/cm.js test --no-browser",
     "prepare": "node bin/cm.js build",
@@ -10,10 +11,12 @@
   "license": "MIT",
   "devDependencies": {
     "@codemirror/buildhelper": "^1.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "builddocs": "^1.0.0",
+    "eslint4b-prebuilt": "^6.7.2",
     "esmoduleserve": "^0.2.0",
-    "serve-static": "^1.14.1",
     "getdocs-ts": "^1.0.0",
-    "builddocs": "^1.0.0"
+    "serve-static": "^1.14.1"
   },
   "repository": {
     "type": "git",

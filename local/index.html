@@ -1,0 +1,53 @@
+<!doctype html>
+
+<head>
+	<meta charset=utf8>
+	<style>
+		body,
+		html {
+			background-color: #282c34;
+			font-family: 'AvenirNextLPro', 'Roboto', sans-serif;
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			color: #fff;
+			overflow: hidden;
+			scrollbar-width: thin;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.cm-editor .cm-content {
+			height: 100%;
+			width: 100%;
+			max-height: 100vh;
+			font-size: 14px;
+			-webkit-touch-callout: text;
+			-webkit-user-select: text;
+			-khtml-user-select: text;
+			-moz-user-select: text;
+			-ms-user-select: text;
+			user-select: text;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="ide"></div>
+	<script src="dist/editor.bundle.js"></script>
+	<script>
+		const editor = new CodeEditor.EditorView({
+			doc: 'console.log("Hello world")',
+			extensions: [
+				...CodeEditor.extensions,
+				CodeEditor.javascript(),
+			],
+			parent: document.getElementById("ide"),
+		});
+		window.editor = editor;
+	</script>
+</body>

@@ -1,0 +1,2 @@
+# Build
+npx rollup -c
