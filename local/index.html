@@ -41,10 +41,10 @@
 	<script src="dist/editor.bundle.js"></script>
 	<script>
 		const editor = new CodeEditor.EditorView({
-			doc: 'console.log("Hello world")',
+			doc: 'print("Hello, World!")\n',
 			extensions: [
 				...CodeEditor.extensions,
-				CodeEditor.javascript(),
+				CodeEditor.languages.python(),
 			],
 			parent: document.getElementById("ide"),
 		});
