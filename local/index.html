@@ -40,12 +40,16 @@
 	<div id="ide"></div>
 	<script src="dist/editor.bundle.js"></script>
 	<script>
+		const currentLanguage = "cpp";
+		const langugage = CodeEditor.languageExtensions[currentLanguage];
+		const extensions = [
+			...CodeEditor.extensions,
+			langugage.lint,
+			langugage.lang(),
+		];
 		const editor = new CodeEditor.EditorView({
 			doc: 'print("Hello, World!")\n',
-			extensions: [
-				...CodeEditor.extensions,
-				CodeEditor.languages.python(),
-			],
+			extensions: extensions,
 			parent: document.getElementById("ide"),
 		});
 		window.editor = editor;
